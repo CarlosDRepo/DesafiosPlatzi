@@ -22,3 +22,23 @@ function factor(){
 
 console.log(factor()); // true o false dependiendo de los datos
 
+function one(n){
+
+    if (n === 0){
+        return 0;
+      }
+        let steps = 0;
+        while (n != 1) {
+            if (n % 2 == 0) {
+                n = n / 2;
+            } else if (n == 3 || n % 4 == 1) {
+                n = n - 1;
+            } else {
+                n = n + 1;
+            }
+            steps++;
+        }
+        return steps;
+    }
+    
+    console.log(one(15));
