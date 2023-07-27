@@ -42,3 +42,29 @@ function one(n){
     }
     
     console.log(one(15));
+
+    function prime(n) {
+        if (n == 1) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    function primesUpTo(num) {
+        let primesList = [];
+        for (let i = 2; i <= num; i++) {
+            if (prime(i)) {
+                primesList.push(i);
+            }
+        }
+        return primesList;
+    }
+    
+    // Ejemplo de uso:
+    console.log(primesUpTo(10));  // [2, 3, 5, 7]
+    
