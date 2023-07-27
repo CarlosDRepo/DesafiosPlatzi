@@ -22,28 +22,8 @@ function factor(){
 
 console.log(factor()); // true o false dependiendo de los datos
 
-function one(n){
-
-    if (n === 0){
-        return 0;
-      }
-        let steps = 0;
-        while (n != 1) {
-            if (n % 2 == 0) {
-                n = n / 2;
-            } else if (n == 3 || n % 4 == 1) {
-                n = n - 1;
-            } else {
-                n = n + 1;
-            }
-            steps++;
-        }
-        return steps;
-    }
-    
-    console.log(one(15));
-
-    function prime(n) {
+function primesUpTo(num) {
+    function isPrime(n) {
         if (n == 1) {
             return false;
         }
@@ -54,17 +34,16 @@ function one(n){
         }
         return true;
     }
-    
-    function primesUpTo(num) {
-        let primesList = [];
-        for (let i = 2; i <= num; i++) {
-            if (prime(i)) {
-                primesList.push(i);
-            }
+
+    let primesList = [];
+    for (let i = 2; i <= num; i++) {
+        if (isPrime(i)) {
+            primesList.push(i);
         }
-        return primesList;
     }
-    
-    // Ejemplo de uso:
-    console.log(primesUpTo(10));  // [2, 3, 5, 7]
+    return primesList;
+}
+
+// Ejemplo de uso:
+console.log(primesUpTo(5));  // [2, 3, 5, 7]
     
